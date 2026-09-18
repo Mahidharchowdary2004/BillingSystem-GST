@@ -1,0 +1,42 @@
+/* Add print styles to the end of the file */
+@media print {
+  /* Hide all UI elements by default when printing */
+  body * {
+    visibility: hidden;
+  }
+  
+  /* Only show elements with the print-section class and its children */
+  .print-section, .print-section * {
+    visibility: visible;
+  }
+  
+  .print-section {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+  }
+
+  /* Thermal Receipt Specific Print Overrides */
+  .thermal-receipt.print-section {
+    width: 80mm; /* Standard 3-inch thermal width */
+    padding: 0;
+    margin: 0;
+    font-family: monospace;
+    font-size: 12px;
+  }
+
+  /* Remove any background colors and shadows */
+  .modal-content, .card {
+    box-shadow: none !important;
+    border: none !important;
+    background: white !important;
+  }
+  
+  /* Hide print preview buttons */
+  .hide-on-print {
+    display: none !important;
+  }
+}
