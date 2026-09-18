@@ -63,7 +63,7 @@ const Procurement = () => {
             </select>
           </div>
 
-          <div style={{ display: 'flex', gap: '1rem', marginBottom: '1.5rem', alignItems: 'flex-end' }}>
+          <div className="responsive-flex" style={{ gap: '1rem', marginBottom: '1.5rem', alignItems: 'flex-end' }}>
             <div style={{ flex: 2 }}>
               <label style={{ display: 'block', marginBottom: '0.5rem' }}>Product</label>
               <select style={{ width: '100%', padding: '0.5rem' }} value={selectedProduct} onChange={handleProductSelect}>
@@ -111,7 +111,7 @@ const Procurement = () => {
             </div>
           )}
 
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '2rem', paddingTop: '1rem', borderTop: '1px solid var(--border-color)' }}>
+          <div className="responsive-flex" style={{ justifyContent: 'space-between', alignItems: 'center', marginTop: '2rem', paddingTop: '1rem', borderTop: '1px solid var(--border-light)' }}>
             <h3>Invoice Total: <span style={{ color: 'var(--primary-color)' }}>₹{calculateTotal().toFixed(2)}</span></h3>
             <button className="btn btn-primary" onClick={handleSubmit} style={{ padding: '0.75rem 2rem' }}>Submit & Update Stock</button>
           </div>

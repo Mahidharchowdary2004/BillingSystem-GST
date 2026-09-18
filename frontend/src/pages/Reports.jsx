@@ -24,7 +24,7 @@ const Reports = () => {
           <div style={{ marginBottom: '2rem' }}>
             <h4 style={{ marginBottom: '0.5rem' }}>GSTR-1 Ready Export</h4>
             <p style={{ color: 'var(--text-light)', marginBottom: '1rem', fontSize: '0.9rem' }}>Summary of B2B outward supplies with HSN-wise tax summary.</p>
-            <div style={{ display: 'flex', justifyContent: 'space-between', padding: '1rem', backgroundColor: 'var(--secondary-color)', borderRadius: '8px' }}>
+            <div className="responsive-flex" style={{ justifyContent: 'space-between', padding: '1rem', backgroundColor: 'var(--bg-secondary)', borderRadius: '8px' }}>
               <div>
                 <span style={{ display: 'block', fontSize: '0.85rem', color: 'var(--text-light)' }}>Total Taxable Value</span>
                 <span style={{ fontWeight: 'bold' }}>₹{(totalB2b - totalTaxCollected).toFixed(2)}</span>
@@ -49,7 +49,7 @@ const Reports = () => {
           
           <div style={{ marginBottom: '2rem' }}>
             <h4 style={{ marginBottom: '0.5rem' }}>Daily Day-Book</h4>
-            <div style={{ display: 'flex', gap: '1rem' }}>
+            <div className="responsive-flex" style={{ gap: '1rem' }}>
               <div style={{ flex: 1, padding: '1rem', backgroundColor: '#f0fdf4', borderRadius: '8px', border: '1px solid #bbf7d0' }}>
                 <span style={{ display: 'block', fontSize: '0.85rem', color: '#166534' }}>Retail POS Collection (B2C)</span>
                 <span style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#15803d' }}>₹{totalB2c.toFixed(2)}</span>

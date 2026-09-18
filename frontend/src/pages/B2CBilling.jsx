@@ -54,7 +54,7 @@ const B2CBilling = () => {
   return (
     <div>
       <h2 style={{ marginBottom: '1.5rem' }}>B2C Retail POS Engine</h2>
-      <div style={{ display: 'flex', gap: '2rem' }}>
+      <div className="responsive-flex">
         <div style={{ flex: 2 }}>
           <div className="card">
             <form onSubmit={handleBarcodeSubmit} style={{ display: 'flex', gap: '1rem', marginBottom: '2rem' }}>
@@ -140,7 +140,7 @@ const B2CBilling = () => {
       </div>
 
       {showPreview && (
-        <div className="modal-overlay hide-on-print" onClick={(e) => { if (e.target.className === 'modal-overlay hide-on-print') setShowPreview(false); }}>
+        <div className="modal-overlay" onClick={(e) => { if (e.target.classList.contains('modal-overlay')) setShowPreview(false); }}>
           <div className="modal-content thermal-receipt print-section" style={{ maxWidth: '350px', backgroundColor: 'white' }}>
             <div className="modal-header hide-on-print">
               <h3>Receipt Preview</h3>

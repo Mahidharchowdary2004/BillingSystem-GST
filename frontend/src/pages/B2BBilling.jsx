@@ -57,7 +57,7 @@ const B2BBilling = () => {
       <div className="card">
         <h4 style={{ marginBottom: '1rem' }}>Standard GST Invoicing</h4>
         
-        <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem' }}>
+        <div className="responsive-flex" style={{ gap: '1rem', marginBottom: '2rem' }}>
           <div style={{ flex: 1 }}>
             <label>Select Buyer</label>
             <select style={{ width: '100%' }} value={selectedCustomer} onChange={e => setSelectedCustomer(e.target.value)}>
@@ -73,7 +73,7 @@ const B2BBilling = () => {
           </div>
         </div>
 
-        <div style={{ display: 'flex', gap: '1rem', marginBottom: '1.5rem', alignItems: 'flex-end' }}>
+        <div className="responsive-flex" style={{ gap: '1rem', marginBottom: '1.5rem', alignItems: 'flex-end' }}>
           <div style={{ flex: 2 }}>
             <label>Product</label>
             <select style={{ width: '100%' }} value={selectedProduct} onChange={e => setSelectedProduct(e.target.value)}>
@@ -125,14 +125,14 @@ const B2BBilling = () => {
           </div>
         )}
 
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '2rem', paddingTop: '1rem', borderTop: '1px solid var(--border-light)' }}>
+        <div className="responsive-flex" style={{ justifyContent: 'space-between', alignItems: 'center', marginTop: '2rem', paddingTop: '1rem', borderTop: '1px solid var(--border-light)' }}>
           <h3>Total Invoice Value: <span style={{ color: 'var(--primary-color)' }}>₹{calculateTotal().toFixed(2)}</span></h3>
           <button className="btn btn-primary" onClick={handlePreview} style={{ padding: '0.75rem 2rem', fontSize: '1.1rem' }}>Preview & Print Invoice</button>
         </div>
       </div>
 
       {showPreview && (
-        <div className="modal-overlay hide-on-print" onClick={(e) => { if (e.target.className === 'modal-overlay hide-on-print') setShowPreview(false); }}>
+        <div className="modal-overlay" onClick={(e) => { if (e.target.classList.contains('modal-overlay')) setShowPreview(false); }}>
           <div className="modal-content print-section" style={{ maxWidth: '800px', backgroundColor: 'white' }}>
             <div className="modal-header hide-on-print">
               <h3>Invoice Print Preview</h3>
