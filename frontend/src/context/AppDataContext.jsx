@@ -1,5 +1,12 @@
 import React, { createContext, useState, useContext } from 'react';
-import { initialProducts, initialSuppliers, initialCustomers } from '../mockData';
+import { 
+  initialProducts, 
+  initialSuppliers, 
+  initialCustomers,
+  initialB2bInvoices,
+  initialB2cReceipts,
+  initialProcurements
+} from '../mockData';
 
 const AppDataContext = createContext();
 
@@ -7,9 +14,9 @@ export const AppDataProvider = ({ children }) => {
   const [products, setProducts] = useState(initialProducts);
   const [suppliers, setSuppliers] = useState(initialSuppliers);
   const [customers, setCustomers] = useState(initialCustomers);
-  const [b2bInvoices, setB2bInvoices] = useState([]);
-  const [b2cReceipts, setB2cReceipts] = useState([]);
-  const [procurements, setProcurements] = useState([]);
+  const [b2bInvoices, setB2bInvoices] = useState(initialB2bInvoices);
+  const [b2cReceipts, setB2cReceipts] = useState(initialB2cReceipts);
+  const [procurements, setProcurements] = useState(initialProcurements);
 
   const addProduct = (product) => {
     setProducts([...products, { ...product, id: products.length + 1 }]);
