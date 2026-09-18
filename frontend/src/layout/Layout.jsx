@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { LayoutDashboard, Package, FileText, ShoppingCart, Truck, BarChart2, Menu } from 'lucide-react';
 
-const Layout = () => {
+const Layout = ({ onLogout }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -60,8 +60,11 @@ const Layout = () => {
             </button>
             <h3>Enterprise Dual-Billing Platform</h3>
           </div>
-          <div className="header-user">
-            <span className="badge badge-primary">Admin User</span>
+          <div className="header-user" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+            <span className="badge badge-primary hide-on-print">Admin User</span>
+            {onLogout && (
+              <button onClick={onLogout} className="btn hide-on-print" style={{ padding: '0.4rem 0.8rem', fontSize: '0.85rem' }}>Logout</button>
+            )}
           </div>
         </header>
         <div className="content-area">
